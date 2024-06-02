@@ -16,16 +16,17 @@
     background: linear-gradient(45deg, #746EF4, #FF66C3);
     border: none; 
     color: white;
-    padding: 10px 25px;
+    padding: auto;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 20px;
-    margin: 0px 70px 5px 0px;
+    margin-right: 70px;
     cursor: pointer;
     border-radius: 20px; 
     transition: background-color 0.3s ease;
-    font-family: "YeojuCeramic.ttf";
+    font-family: "YeojuCeramic";
+  	padding: 10px 20px;    
 }
 
 .LoginBtn:hover {

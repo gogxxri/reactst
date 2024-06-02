@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import './MainHome.css';
+import './main.css';
 import '../fonts/fonts.css';
+import tpic from '../images/tpic.png';
+import { Link } from 'react-router-dom';
 
-function MainHome() {
+function Main() {
   const [mateText, setMateText] = useState("Travel\nMate");
   const [reviewText, setReviewText] = useState("Travel\nReview");
 
@@ -23,10 +25,11 @@ function MainHome() {
   };
 
   return (
+	<>
     <div className="Maintop">
-      <div className="MainRight">
-        <div className="mainText">마음이 <br /> Dong하는 사람과 <br /> 취향 존중 <br /> 여행</div>
-        <button className="joinButton">Join-us</button>
+      <div className="MainLeft">
+        <div className="mainText">마음이 <br /> <span className="highlight">Dong</span>하는 사람과 <br /> 함께 완<span className="highlight">Sung</span> 하는<br /> 취향 존중 여행</div>
+        <Link to="/login" className="joinButton">Join-us</Link>
       </div>
       
       <div className="buttonsContainer">
@@ -45,9 +48,19 @@ function MainHome() {
           {reviewText}
         </button>
       </div>
-    </div>
+	    </div>
+	          <div className="bottom-container">
+			  <div className="image-container">
+			    <img className="tpic" src={tpic} alt="tpic" />
+			  </div>
+			  <div className="bottom-text-container">
+			    <div>29DongSung과 함께</div>
+			    <div>취향 존중 여행 메이트 찾으러 슈슝!</div>
+			  </div>
+	      </div>
+    </>
 
   );
 }
 
-export default MainHome;
+export default Main;
