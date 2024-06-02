@@ -1,0 +1,36 @@
+.bottom-container {
+    background-color: white; 
+    padding: 20px; 
+    overflow-y: auto;
+  }
+  
+  .main-bottom {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+  }
+  
+  .image-container {
+    width: 100%; 
+  }
+  
+  .tpic {
+    width: 100%;
+  }
+  
+  .bottom-text-container {
+    margin-top: 20px; 
+    text-align: center;
+    color : black;
+    visibility: visible;
+    margin-bottom :50px;
+    font-size: 4em;
+    font-family: YeojuCeramic;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 768px) {
+    .bottom-text-container {
+      font-size: 2em;
+    }
+  }

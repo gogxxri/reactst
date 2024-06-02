@@ -1,56 +1,53 @@
 import React, { useState } from 'react';
 import './MainHome.css';
-import travelM from '../images/travelM.png';
-import travelR from '../images/travelR.png';
-import mate from '../images/mate.png';
-import review from '../images/review.png';
+import '../fonts/fonts.css';
 
 function MainHome() {
-  const [isHovered1, setIsHovered1] = useState(false);
-  const [isHovered2, setIsHovered2] = useState(false);
+  const [mateText, setMateText] = useState("Travel\nMate");
+  const [reviewText, setReviewText] = useState("Travel\nReview");
 
-  const handleMouseEnter1 = () => {
-    setTimeout(() => {
-      setIsHovered1(true);
-    }, 200);
+  const handleMouseEnterMate = () => {
+    setMateText("여행\n메이트");
   };
 
-  const handleMouseLeave1 = () => {
-    setIsHovered1(false);
+  const handleMouseLeaveMate = () => {
+    setMateText("Travel\nMate");
   };
 
-  const handleMouseEnter2 = () => {
-    setTimeout(() => {
-      setIsHovered2(true);
-    }, 200);
+  const handleMouseEnterReview = () => {
+    setReviewText("여행\n리뷰");
   };
 
-  const handleMouseLeave2 = () => {
-    setIsHovered2(false);
+  const handleMouseLeaveReview = () => {
+    setReviewText("Travel\nReview");
   };
 
   return (
-    <div className="MainHome">
-      <div className="contentBox contentBox1" onMouseEnter={handleMouseEnter1} onMouseLeave={handleMouseLeave1}>
-        <div className="imageWrapper">
-          {isHovered1 ? <img src={mate} alt="여행 메이트 찾기" /> : <img src={travelM} alt="여행 메이트 찾기" />}
-        </div>
-        <div className="description">
-          {isHovered1 ? "Find a travel mate and start your adventure!" : "여행 메이트를 찾아 모험을 시작하세요!"}
-        </div>
+    <div className="Maintop">
+      <div className="MainRight">
+        <div className="mainText">마음이 <br /> Dong하는 사람과 <br /> 취향 존중 <br /> 여행</div>
+        <button className="joinButton">Join-us</button>
       </div>
-      <div className="contentBox contentBox2" onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseLeave2}>
-        <div className="imageWrapper">
-          {isHovered2 ? <img src={review} alt="Travel Review" /> : <img src={travelR} alt="Travel Review" />}
-        </div>
-        <div className="description">
-          {isHovered2 ? "Read travel reviews from our community." : "우리 커뮤니티의 여행 후기를 읽어보세요."}
-        </div>
+      
+      <div className="buttonsContainer">
+        <button 
+          className="button travelMate" 
+          onMouseEnter={handleMouseEnterMate} 
+          onMouseLeave={handleMouseLeaveMate}
+        >
+          {mateText}
+        </button>
+        <button 
+          className="button travelReview" 
+          onMouseEnter={handleMouseEnterReview} 
+          onMouseLeave={handleMouseLeaveReview}
+        >
+          {reviewText}
+        </button>
       </div>
     </div>
+
   );
 }
-
-
 
 export default MainHome;

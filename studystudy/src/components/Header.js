@@ -1,5 +1,6 @@
 import hifive from '../images/hifive.png';
 import './header.css';
+import '../fonts/fonts.css';
 
 
 export default function App() {
