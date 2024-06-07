@@ -2,7 +2,7 @@ import hifive from '../images/hifive.png';
 import './header.css';
 import '../fonts/fonts.css';
 import { Link } from 'react-router-dom';
-import Main from '../home/Main.js';
+import Main from './main/Main.js';
 
 
 export default function App() {

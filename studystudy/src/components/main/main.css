@@ -1,5 +1,5 @@
-.Maintop {
-  background-image: url('../images/home.png');
+.mainTop {
+  background-image: url('../../images/home.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -10,7 +10,7 @@
   white-space: nowrap;
 }
 
-.MainLeft {
+.mainLeft {
   flex: 1;
   display: flex;
   flex-direction: column;
