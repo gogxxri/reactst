@@ -1,0 +1,39 @@
+/* sideFilter.css */
+.boardTag {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+}
+
+.boardTag.active {
+  background-color: #007BFF;
+  color: white;
+}
+
+.searchContainer, .filterContainer {
+  margin: 20px;
+  background-color : #f8eae1;
+  
+}
+
+.filterGroup {
+  margin-bottom: 20px;
+}
+
+.filterGroup h3 {
+  margin-bottom: 10px;
+}
+
+.searchBtn {
+  width: 30px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.searchBtnIcon {
+  width: 100%;
+  height: 100%;
+}
