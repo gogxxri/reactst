@@ -13,6 +13,7 @@
   box-sizing: border-box;
   height: 100%; /* Full height to ensure it takes the entire viewport height */
   overflow-y: auto; /* Enable scrolling if content overflows */
+
 }
 
 .recruit-board-item {
