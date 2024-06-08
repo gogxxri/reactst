@@ -1,0 +1,14 @@
+.write-board-container {
+  display: flex;
+  justify-content: center; 
+  box-sizing: border-box;
+}
+
+.board-write-container {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-container .form-control {
+  margin-bottom: 8px;
+}

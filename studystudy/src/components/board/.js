@@ -3,7 +3,7 @@ import TopSearch from './TopSearch';
 import TagFilter from './TagFilter';
 import './sideFilter.css';
 
-function SideFilter({ products, showTopSearch }) {
+function SideFilter({ products }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [passingTags, setPassingTags] = useState({
     region: {
@@ -143,7 +143,7 @@ function SideFilter({ products, showTopSearch }) {
 
   return (
     <>
-      {showTopSearch && <TopSearch value={searchTerm} onChange={handleSearchInputChange} onSearch={searchProducts} />}
+      <TopSearch value={searchTerm} onChange={handleSearchInputChange} onSearch={searchProducts} />
       <div className="filterContainer">
         <TagFilter
           title="지역"
@@ -188,7 +188,7 @@ function SideFilter({ products, showTopSearch }) {
           onItemClick={(item) => handleTagItemClick(item, 'timeOfDay')}
         />
         <TagFilter
-         title="투어"
+          title="투어"
           items={tours}
           activeItems={Object.keys(passingTags.tour).filter(item => passingTags.tour[item])}
           onItemClick={(item) => handleTagItemClick(item, 'tour')}
