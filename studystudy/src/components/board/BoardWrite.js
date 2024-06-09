@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Dropdown } from 'react-bootstrap'; 
+import { Dropdown } from 'react-bootstrap';
 import './boardWrite.css';
 
-function BoardWrite({ onSubmit }) {
+function BoardWrite({ onSubmit, onCancel }) {
   const [formData, setFormData] = useState({
     title: '',
     tags: '',
@@ -46,19 +46,21 @@ function BoardWrite({ onSubmit }) {
       <form onSubmit={handleSubmit}>
         <div className="form-container">
           <div className="d-flex align-items-center mb-3">
-            <Dropdown className="me-3">
-              <Dropdown.Toggle variant="primary">
-                {formData.isRecruitmentDone ? '구인 완료' : '구인 중'}
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                <Dropdown.Item onClick={() => handleRecruitmentStatusChange(false)}>
-                  구인 중
-                </Dropdown.Item>
-                <Dropdown.Item onClick={() => handleRecruitmentStatusChange(true)}>
-                  구인 완료
-                </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
+            {(window.location.pathname === '/recruitboardwrite' || window.location.pathname.includes('/recruitboard/modify')) && (
+              <Dropdown className="recruitDoneButton">
+                <Dropdown.Toggle variant="primary">
+                  {formData.isRecruitmentDone ? '구인 완료' : '구인 중'}
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item onClick={() => handleRecruitmentStatusChange(false)}>
+                    구인 중
+                  </Dropdown.Item>
+                  <Dropdown.Item onClick={() => handleRecruitmentStatusChange(true)}>
+                    구인 완료
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            )}
             <label htmlFor="startDate" className="me-2">
               여행 시작일:
             </label>
@@ -114,8 +116,11 @@ function BoardWrite({ onSubmit }) {
               onChange={handleFileChange}
             />
           </div>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="writeSubmitBtn">
             게시물 작성
+          </button>
+          <button type="button" className="btn btn-secondary" onClick={onCancel}>
+            취소하기
           </button>
         </div>
       </form>

@@ -145,55 +145,63 @@ function SideFilter({ products, showTopSearch }) {
     <>
       {showTopSearch && <TopSearch value={searchTerm} onChange={handleSearchInputChange} onSearch={searchProducts} />}
       <div className="filterContainer">
-        <TagFilter
-          title="지역"
-          items={regions}
-          activeItems={Object.keys(passingTags.region).filter(item => passingTags.region[item])}
-          onItemClick={(item) => handleTagItemClick(item, 'region')}
-        />
-        <TagFilter
-          title="성별"
-          items={genders}
-          activeItems={Object.keys(passingTags.gender).filter(item => passingTags.gender[item])}
-          onItemClick={(item) => handleTagItemClick(item, 'gender')}
-        />
-        <TagFilter
-          title="타입"
-          items={types}
-          activeItems={Object.keys(passingTags.type).filter(item => passingTags.type[item])}
-          onItemClick={(item) => handleTagItemClick(item, 'type')}
-        />
-        <TagFilter
-          title="예산"
-          items={budgets}
-          activeItems={Object.keys(passingTags.budget).filter(item => passingTags.budget[item])}
-          onItemClick={(item) => handleTagItemClick(item, 'budget')}
-        />
-        <TagFilter
-          title="같이 즐겨요"
-          items={activities}
-          activeItems={Object.keys(passingTags.activities).filter(item => passingTags.activities[item])}
-          onItemClick={(item) => handleTagItemClick(item, 'activities')}
-        />
-        <TagFilter
-          title="자기 피알"
-          items={selfPR}
-          activeItems={Object.keys(passingTags.selfPR).filter(item => passingTags.selfPR[item])}
-          onItemClick={(item) => handleTagItemClick(item, 'selfPR')}
-        />
-        <TagFilter
-          title="시간대"
-          items={timeOfDay}
-          activeItems={Object.keys(passingTags.timeOfDay).filter(item => passingTags.timeOfDay[item])}
-          onItemClick={(item) => handleTagItemClick(item, 'timeOfDay')}
-        />
-        <TagFilter
-         title="투어"
-          items={tours}
-          activeItems={Object.keys(passingTags.tour).filter(item => passingTags.tour[item])}
-          onItemClick={(item) => handleTagItemClick(item, 'tour')}
-        />
-      </div>
+	  <TagFilter
+	    className="tagfilter"
+	    title="지역"
+	    items={regions}
+	    activeItems={Object.keys(passingTags.region).filter(item => passingTags.region[item])}
+	    onItemClick={(item) => handleTagItemClick(item, 'region')}
+	  />
+	  <TagFilter
+	    className="tagfilter"
+	    title="성별"
+	    items={genders}
+	    activeItems={Object.keys(passingTags.gender).filter(item => passingTags.gender[item])}
+	    onItemClick={(item) => handleTagItemClick(item, 'gender')}
+	  />
+	  <TagFilter
+	    className="tagfilter"
+	    title="타입"
+	    items={types}
+	    activeItems={Object.keys(passingTags.type).filter(item => passingTags.type[item])}
+	    onItemClick={(item) => handleTagItemClick(item, 'type')}
+	  />
+	  <TagFilter
+	    className="tagfilter"
+	    title="예산"
+	    items={budgets}
+	    activeItems={Object.keys(passingTags.budget).filter(item => passingTags.budget[item])}
+	    onItemClick={(item) => handleTagItemClick(item, 'budget')}
+	  />
+	  <TagFilter
+	    className="tagfilter"
+	    title="같이 즐겨요"
+	    items={activities}
+	    activeItems={Object.keys(passingTags.activities).filter(item => passingTags.activities[item])}
+	    onItemClick={(item) => handleTagItemClick(item, 'activities')}
+	  />
+	  <TagFilter
+	    className="tagFilter"
+	    title="자기 피알"
+	    items={selfPR}
+	    activeItems={Object.keys(passingTags.selfPR).filter(item => passingTags.selfPR[item])}
+	    onItemClick={(item) => handleTagItemClick(item, 'selfPR')}
+	  />
+	  <TagFilter
+	    className="tagfilter"
+	    title="시간대"
+	    items={timeOfDay}
+	    activeItems={Object.keys(passingTags.timeOfDay).filter(item => passingTags.timeOfDay[item])}
+	    onItemClick={(item) => handleTagItemClick(item, 'timeOfDay')}
+	  />
+	  <TagFilter
+	    className="tagfilter"
+	    title="투어"
+	    items={tours}
+	    activeItems={Object.keys(passingTags.tour).filter(item => passingTags.tour[item])}
+	    onItemClick={(item) => handleTagItemClick(item, 'tour')}
+	  />
+	</div>
     </>
   );
 }

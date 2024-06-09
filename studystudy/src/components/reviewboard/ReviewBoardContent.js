@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './recruitBoardContent.css';
-import tempData from './tempData';
+import './reviewBoardContent.css';
 
-const ITEMS_PER_PAGE = 10; // 페이지당 아이템 수
+const ITEMS_PER_PAGE = 10;
 
-const RecruitBoardContent = () => {
+const ReviewBoardContent = ({ data }) => {
   const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
 
   const handleEnterDetail = boardNo => {
-    navigate(`/recruitboard/${boardNo}`);
+    navigate(`/reviewboard/${boardNo}`);
   };
 
-  const uniqueData = tempData.filter((value, index, self) => {
-    return self.findIndex(item => item.CBOARD_NO === value.CBOARD_NO) === index;
+  // 데이터가 배열로 구성되어 있지 않다면 빈 배열로 초기화합니다.
+  const dataArray = Array.isArray(data) ? data : [];
+
+  const uniqueData = dataArray.filter((value, index, self) => {
+    return self.findIndex(item => item.VBOARD_NO === value.VBOARD_NO) === index;
   });
 
   const totalPages = Math.ceil(uniqueData.length / ITEMS_PER_PAGE);
@@ -30,13 +32,13 @@ const RecruitBoardContent = () => {
 
   return (
     <>
-      <div className="recruit-board-container">
-        <div className="recruit-board-items">
+      <div className="review-board-container">
+        <div className="review-board-items">
           {currentData.map(item => (
-            <div key={item.CBOARD_NO} onClick={() => handleEnterDetail(item.CBOARD_NO)} className="recruit-board-item">
+            <div key={item.VBOARD_NO} onClick={() => handleEnterDetail(item.VBOARD_NO)} className="review-board-item">
               <h2>{item.BOARD_TITLE}</h2>
-              <p>게시 여부: {item.RECRUIT_DONE ? '구인중' : '구인완료'}</p>
               <p>게시일: {item.BOARD_WRITEDAY}</p>
+              <img src={item.PHOTO_URL} alt="사진" /> 
             </div>
           ))}
         </div>
@@ -70,4 +72,4 @@ const RecruitBoardContent = () => {
   );
 };
 
-export default RecruitBoardContent;
+export default ReviewBoardContent;

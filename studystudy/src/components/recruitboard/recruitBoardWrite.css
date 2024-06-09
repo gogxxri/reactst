@@ -9,16 +9,21 @@
 
 
 .side-filter {
-  width: 300px; /* 고정된 너비 설정 */
+  width: 300px; 
   padding: 10px;
   box-sizing: border-box;
   height: 100%; 
   overflow-y: auto; 
 }
-
-.board-write-container {
-  width: calc(100% - 320px);
+.write-board-container {
+  width: 100%; 
   padding: 10px;
   box-sizing: border-box;
-  margin-bottom : 20px;
+}
+
+@media (max-width: 768px) {
+
+  .side-filter {
+    display: none; 
+  }
 }

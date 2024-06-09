@@ -1,81 +1,83 @@
-/* sideFilter.css */
 
-/* General container style for side filter */
+
 .side-filter {
-  width: 60%; /* Adjust this value to match the desired width */
+  width: 60%; 
   padding: 10px;
   box-sizing: border-box;
-  height: 100vh; /* Full height to ensure it takes the entire viewport height */
-  overflow-y: auto; /* Enable scrolling if content overflows */
+  max-height: 100vh; 
+  overflow-y : auto;
 }
-
-/* Container for the search section */
 .searchContainer {
   margin-bottom: 0; 
   padding: 0 20px;
 }
 
-/* Top search bar styling */
+
 .topSearch {
   margin-bottom: 0; 
   text-align: center;
   padding: 10px 0;
 }
 
-/* Input container styling */
+
 .inputContainer {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+  width:250px;
 }
 
-/* Top search bar input styling */
+
 .topSearchBar {
-  width: 80%;
+  width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-right: 10px;
 }
 
-/* Search button styling */
+
 .searchBtn {
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
 
-/* Search button icon styling */
+
 .searchBtnIcon {
   width: 24px;
   height: 24px;
 }
 
-/* Filter container styling */
+
 .filterContainer {
   margin-top: 0; 
-  padding: 20px;
+  padding: 10px;
+  font-size : 13px;
 }
 
-/* Filter group styling */
+
 .filterGroup {
   margin-bottom: 20px;
   padding-bottom: 10px;
   border-bottom: 1px solid #ccc; 
 }
 
-/* Last filter group styling */
+
 .filterGroup:last-child {
   border-bottom: none; 
 }
 
-/* Filter group header styling */
+
 .filterGroup h3 {
   margin-bottom: 10px;
+  font-size:15px;
+   text-align: left;
+   font-weight: bold;
 }
 
-/* Board tag styling */
+
 .boardTag {
   margin: 5px;
   padding: 5px 10px;
@@ -86,14 +88,14 @@
   transition: background-color 0.3s;
 }
 
-/* Active board tag styling */
+
 .boardTag.active {
   background-color: #007bff;
   color: white;
   border: 1px solid #007bff;
 }
 
-/* Hover effect for board tag */
+
 .boardTag:hover {
   background-color: #007bff;
   color: white;

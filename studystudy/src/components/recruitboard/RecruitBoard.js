@@ -15,10 +15,10 @@ function RecruitBoard() {
       <div className="side-filter">
         <SideFilter products={products} showTopSearch={true} />
       </div>
-      <div className="link-content-container">
-        <div className="link-container">
-          <Link to="/reviewboard" className="go-to-review">여행 후기<br/>게시판</Link>
-          <Link to="/recruitboardwrite" className="go-to-write">여행 메이트<br/>게시글 작성</Link>
+      <div className="recruit-link-content-container">
+        <div className="recruit-link-container">
+          <Link to="/reviewboard" className="go-to-review">메이트의 여행 후기</Link>
+          <Link to="/recruitboardwrite" className="go-to-write">메이트 찾으러 가기</Link>
         </div>
         <div className="recruit-board-content">
           <RecruitBoardContent />

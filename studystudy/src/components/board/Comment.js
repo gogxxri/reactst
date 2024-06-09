@@ -6,14 +6,17 @@ const Comment = ({ comments, setComments }) => {
   const [replyText, setReplyText] = useState('');
   const [replyingTo, setReplyingTo] = useState(null); // 대댓글 입력 상태 추가
 
+  // comments를 배열로 변환
+  const commentList = Array.isArray(comments) ? comments : [];
+
   const handleCommentChange = (e) => {
     setNewComment(e.target.value);
   };
 
   const handleAddComment = () => {
-    const newId = comments.length + 1;
+    const newId = commentList.length + 1;
     const newCommentObj = { id: newId, text: newComment, author: '사용자', profilePic: '/profile.jpg', replies: [] };
-    setComments([...comments, newCommentObj]);
+    setComments([...commentList, newCommentObj]);
     setNewComment('');
   };
 
@@ -23,11 +26,11 @@ const Comment = ({ comments, setComments }) => {
   };
 
   const handleAddReply = (commentId, depth) => {
-    const commentIndex = comments.findIndex(comment => comment.id === commentId);
+    const commentIndex = commentList.findIndex(comment => comment.id === commentId);
     if (commentIndex !== -1) {
-      const newId = comments[commentIndex].replies.length + 1;
+      const newId = commentList[commentIndex].replies.length + 1;
       const newReply = { id: newId, text: replyText, author: '사용자', profilePic: '/profile.jpg', depth: depth + 1 };
-      const updatedComments = [...comments];
+      const updatedComments = [...commentList];
       updatedComments[commentIndex].replies.push(newReply);
       setComments(updatedComments);
       setReplyingTo(null); 
@@ -45,7 +48,7 @@ const Comment = ({ comments, setComments }) => {
         <button className="comment-button" onClick={handleAddComment}>댓글</button>
       </div>
       <div className="comments">
-        {comments.map(comment => (
+        {commentList.map(comment => (
           <div key={comment.id} className="comment">
             <div className="comment-profile">
               <img src={comment.profilePic} alt="프로필 사진" className="comment-profile-pic" />

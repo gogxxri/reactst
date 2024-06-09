@@ -6,7 +6,7 @@
   border-radius: 5px;
   background-color: #f9f9f9;
   display: inline-block;
-  position: relative; /* 부모 요소로부터의 상대적 위치 설정 */
+  position: relative; 
 }
 .profile-details {
   width: 555px;
@@ -118,9 +118,6 @@
 .btn-right2 {
   right: 165px; 
   top: 20px;
-}
-button:hover {
-  background-color: #d35400;
 }
 .posts-container {
   display: flex;

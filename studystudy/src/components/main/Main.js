@@ -30,7 +30,7 @@ function Main() {
   };
 
   const handleReviewClick = () => {
-    navigate('/TravelReview');
+    navigate('/ReviewBoard');
   };
 
   return (

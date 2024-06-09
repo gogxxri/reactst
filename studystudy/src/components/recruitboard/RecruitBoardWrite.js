@@ -1,12 +1,18 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import BoardWrite from '../board/BoardWrite';
 import SideFilter from '../board/SideFilter';
 import './recruitBoardWrite.css';
 
 function RecruitBoardWrite() {
+  const navigate = useNavigate();
+
   const handleSubmit = (formData) => {
-    // 여기에서 폼 데이터
-    console.log(formData);
+    // 폼 데이터 처리 (예: 서버로 전송)
+    console.log('Form data:', formData);
+
+    // 데이터 저장 후 목록 페이지로 이동
+    navigate('/recruitboard');
   };
 
   return (
@@ -15,7 +21,7 @@ function RecruitBoardWrite() {
         <SideFilter showTopSearch={false} />
       </div>
       <div className="board-write-container">
-        <BoardWrite onSubmit={handleSubmit} />
+        <BoardWrite onSubmit={handleSubmit} onCancel={() => navigate('/recruitboard')} />
       </div>
     </div>
   );
