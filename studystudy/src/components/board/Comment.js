@@ -42,7 +42,7 @@ const Comment = ({ comments, setComments }) => {
           value={newComment}
           onChange={handleCommentChange}
         ></textarea>
-        <button className="comment-button" onClick={handleAddComment}>댓글 작성</button>
+        <button className="comment-button" onClick={handleAddComment}>댓글</button>
       </div>
       <div className="comments">
         {comments.map(comment => (
@@ -51,35 +51,39 @@ const Comment = ({ comments, setComments }) => {
               <img src={comment.profilePic} alt="프로필 사진" className="comment-profile-pic" />
               <span className="comment-author">{comment.author}</span>
               <p className="comment-text">{comment.text}</p>
-            </div>
-            {/* 대댓글 입력란 */}
-            {replyingTo === comment.id && (
-              <div className="reply-input">
-                <textarea
-                  placeholder="대댓글을 작성해주세요."
-                  value={replyText}
-                  onChange={(e) => setReplyText(e.target.value)}
-                ></textarea>
-                <button className="reply-button" onClick={() => handleAddReply(comment.id, comment.depth)}>대댓글 작성</button>
+              {/* 대댓글 토글 버튼 */}
+              {!replyingTo && comment.replies.length === 0 && (
+                <button className="toggle-reply" onClick={() => handleToggleReply(comment.id)}>🗨답글</button>
+              )}
+              {/* 대댓글 목록 */}
+              <div className="replies">
+                {comment.replies.map(reply => (
+                  <div key={reply.id} className="reply" style={{ marginLeft: `${reply.depth * 40}px` }}>
+                    <div className="reply-profile">
+                      <img src={reply.profilePic} alt="프로필 사진" className="reply-profile-pic" />
+                      <span className="reply-author">{reply.author}</span>
+                    </div>
+                    <div className="reply-details">
+                      <p className="reply-text">{reply.text}</p>
+                    </div>
+                  </div>
+                ))}
+                {/* 대댓글 달기 버튼 */}
+                {!replyingTo && comment.replies.length > 0 && (
+                  <button className="toggle-reply" onClick={() => handleToggleReply(comment.id)}>🗨답글</button>
+                )}
               </div>
-            )}
-            {/* 대댓글 토글 버튼 */}
-            {!replyingTo && (
-              <button className="toggle-reply" onClick={() => handleToggleReply(comment.id)}>대댓글 작성하기</button>
-            )}
-            {/* 대댓글 목록 */}
-            <div className="replies">
-              {comment.replies.map(reply => (
-                <div key={reply.id} className="reply" style={{ marginLeft: `${reply.depth * 20}px` }}>
-                  <div className="reply-profile">
-                    <img src={reply.profilePic} alt="프로필 사진" className="reply-profile-pic" />
-                    <span className="reply-author">{reply.author}</span>
-                  </div>
-                  <div className="reply-details">
-                    <p className="reply-text">{reply.text}</p>
-                  </div>
+              {/* 대댓글 입력란 */}
+              {replyingTo === comment.id && (
+                <div className="reply-input" style={{ marginLeft: `${comment.depth * 40}px` }}>
+                  <textarea
+                    placeholder="대댓글을 작성해주세요."
+                    value={replyText}
+                    onChange={(e) => setReplyText(e.target.value)}
+                  ></textarea>
+                  <button className="reply-button" onClick={() => handleAddReply(comment.id, comment.depth)}>🗨답글</button>
                 </div>
-              ))}
+              )}
             </div>
           </div>
         ))}

@@ -1,6 +1,7 @@
 const tempData = [
   {
     CBOARD_NO: 'C1',
+    MEMBER_ID: 'user123',
     CBOARD_TAGS: ['여행', '동행'],
     RECERUIT_DONE: false,
     TRIP_START: '2024-07-01',
@@ -19,11 +20,12 @@ const tempData = [
       { id: 2, text: '댓글 2', author: '댓글 작성자 2', depth: 0, replies: [
         { id: 1, text: '대댓글 1-1', author: '대댓글 작성자 1-1', depth: 1 },
         { id: 2, text: '대댓글 1-2', author: '대댓글 작성자 1-2', depth: 1 }
-      ], }
+      ] }
     ]
   },
   {
     CBOARD_NO: 'C2',
+    MEMBER_ID: 'user124',
     CBOARD_TAGS: '캠핑, 등산',
     RECERUIT_DONE: true,
     TRIP_START: '2024-07-02',
@@ -44,6 +46,7 @@ const tempData = [
   },
   {
     CBOARD_NO: 'C3',
+    MEMBER_ID: 'user125',
     CBOARD_TAGS: '여행, 자전거',
     RECERUIT_DONE: false,
     TRIP_START: '2024-07-03',
@@ -64,6 +67,7 @@ const tempData = [
   },
   {
     CBOARD_NO: 'C4',
+    MEMBER_ID: 'user126',
     CBOARD_TAGS: '여행, 해변',
     RECERUIT_DONE: false,
     TRIP_START: '2024-07-04',
@@ -82,9 +86,9 @@ const tempData = [
       { id: 3, text: '댓글 3', author: '댓글 작성자 3', replies: [] }
     ]
   },
- 
   {
     CBOARD_NO: 'C5',
+    MEMBER_ID: 'user127',
     CBOARD_TAGS: '여행, 산행',
     RECERUIT_DONE: false,
     TRIP_START: '2024-07-05',
