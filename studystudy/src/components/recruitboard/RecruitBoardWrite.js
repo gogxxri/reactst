@@ -11,7 +11,7 @@ function RecruitBoardWrite() {
 
   return (
     <div className="write-board-container">
-      <div className="side-filter">
+      <div className="side-filter-board">
         <SideFilter showTopSearch={false} />
       </div>
       <div className="board-write-container">

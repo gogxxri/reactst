@@ -1,22 +1,24 @@
-.filterContainer {
-  margin: 20px;
-  overflow-y: auto; 
-  margin-bottom: 70px; 
-}
+/* recruitBoardWrite.css */
+
+/* Container for the whole write board */
 .write-board-container {
   display: flex;
-  justify-content: center; 
   width: 100%;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  height: 100vh;
 }
 
+/* Side filter style */
+.side-filter {
+  width: 300px; /* 고정된 너비 설정 */
+  padding: 10px;
+  box-sizing: border-box;
+  height: 100%; /* Full height to ensure it takes the entire viewport height */
+  overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+/* Container for the board write section */
 .board-write-container {
-  width: 100%;
+  width: calc(100% - 320px); /* 전체 너비에서 사이드 필터의 너비를 뺀 값으로 설정 */
+  padding: 10px;
   box-sizing: border-box;
-}
-
-.form-container .form-control {
-  margin-bottom: 8px;
 }
