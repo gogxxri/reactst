@@ -7,11 +7,14 @@
 .header {
   padding: 10px 0;
   border-bottom: 1px solid #ccc;
+  text-align: right; 
+  background-color : yellow;
 }
 
 .back-link {
   color: #007bff;
   text-decoration: none;
+  margin-right : 40px;
 }
 
 .back-link:hover {
@@ -34,6 +37,9 @@
 
 .board-title {
   margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .board-info-container {
@@ -49,7 +55,7 @@
 .profile-picture {
   width: 32px;
   height: 32px;
-  border-radius: 50%; /* 원형으로 프로필 사진 모양 변경 */
+  border-radius: 50%;
   margin-right: 8px;
 }
 
@@ -66,6 +72,9 @@
 
 .recruitment-status {
   font-weight: bold;
+  font-size: 14px;
+  color: #777;
+    margin-right:15px;
 }
 
 .board-photo {
@@ -98,7 +107,7 @@
 .comment-author {
   font-weight: bold;
   margin-right: 8px;
-  display: inline-block; /* 수정: 댓글 작성자를 왼쪽으로 정렬 */
+  display: inline-block; 
 }
 
 .comment .profile-picture {
@@ -106,7 +115,7 @@
   height: 24px;
   border-radius: 50%;
   margin-right: 8px;
-  display: inline-block; /* 수정: 프로필 사진을 왼쪽으로 정렬 */
+  display: inline-block; 
 }
 
 .comment-text,
@@ -146,14 +155,6 @@
   background-color: #36a3f7;
 }
 
-textarea {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-}
-
 .button-container {
   display: flex;
   justify-content: flex-end;
@@ -162,4 +163,32 @@ textarea {
 .comment-button,
 .reply-button {
   margin-left: 8px;
+}
+
+.date-info {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.date-info-label {
+  margin-right: 4px;
+  color: #777;
+}
+
+
+.edit-button,
+.delete-button {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 20px;
+
+}
+
+.edit-button:hover,
+.delete-button:hover {
+  background-color: #0056b3;
 }

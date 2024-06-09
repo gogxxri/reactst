@@ -20,9 +20,11 @@ const tempData = [
       { id: 2, text: '댓글 2', author: '댓글 작성자 2', depth: 0, replies: [
         { id: 1, text: '대댓글 1-1', author: '대댓글 작성자 1-1', depth: 1 },
         { id: 2, text: '대댓글 1-2', author: '대댓글 작성자 1-2', depth: 1 }
-      ] }
+      ] },
+      { id: 3, text: '댓글 1', author: '댓글 작성자 3', depth: 0, replies: [] },
     ]
   },
+  
   {
     CBOARD_NO: 'C2',
     MEMBER_ID: 'user124',
